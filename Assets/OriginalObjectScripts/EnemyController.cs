@@ -19,5 +19,14 @@ public class EnemyController : MonoBehaviour {
 		
 	}
 
+	void OnTriggerEnter(Collider other) {
+		if (other.name == "unitychan") {
+			hp -= 50;
+			print (hp);
+			anim.Play ("FighterMediumPrehab");
+			Destroy (boxCollider);
+		}
+	}
 
 }
+
