@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 	public int destroyCount = 0;
 
 	void Start(){
-
+		playerHPSlider = GameObject.Find ("PlayerHPSlider").GetComponent<Slider> ();
 		playerHPSlider.maxValue = playerHP;
 		playerHPSlider.value = playerHP;
 	}
