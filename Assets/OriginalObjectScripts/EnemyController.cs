@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 	Animation anim;
 	BoxCollider boxCollider;
-	int hp = 100;
+	public int hp = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +23,11 @@ public class EnemyController : MonoBehaviour {
 		if (other.name == "unitychan") {
 			hp -= 50;
 			print (hp);
-			anim.Play ("FighterMediumPrehab");
-			Destroy (boxCollider);
+			if (hp <= 0) {
+				anim.Play ("FighterMediumPrehab");
+				Destroy (boxCollider);
+			}
 		}
 	}
-
 }
 
