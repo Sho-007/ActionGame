@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour {
+public class EnemyController : MonoBehaviour { 
+
+
 	Animation anim;
 	BoxCollider boxCollider;
 	public int hp = 100;
