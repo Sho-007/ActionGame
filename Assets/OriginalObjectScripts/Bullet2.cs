@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet2 : MonoBehaviour {
-	public float
+	public float;
 
 	// Use this for initialization
 	void Start () {
