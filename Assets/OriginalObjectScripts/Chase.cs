@@ -9,9 +9,9 @@ public class Chase : MonoBehaviour {
 	public Transform target;
 	public Transform[] targets;
 	public NavMeshAgent agent;
-	public 
+	public current target = 0 ;
 
-	public GameObject target;
+	public GameObject target; 
 	private NavMeshAgent agent;
 
 	// Use this for initialization
@@ -21,8 +21,23 @@ public class Chase : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		//ターゲットの位置を目的地に設定する。
 		agent.destination = target.transform.position;
+		if (Vector3.Distance(transform.position, target.position) < 1) {
+            if (currentTarget < targets.Length - 1) {
+                currentTarget += 1;
+            }
+            else {
+                currentTarget = 0;
+            }
+        }
+
+        target = targets[currentTarget];
+
+        if (target != null) {
+            agent.SetDestination (target.position);
+        }
+
+
 	}
 }
