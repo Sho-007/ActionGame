@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class EnemyDropObject : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public GameObject[] Train;
+
+	void Start ()
+	{
+		number = Random.Range (0, Train.Length);
+		Instantiate(Train[number],transform.position,transform.rotation);
 	}
 }
