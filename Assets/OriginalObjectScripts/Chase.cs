@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,11 @@ public class Chase : MonoBehaviour {
 	public Transform target;
 	public Transform[] targets;
 	public NavMeshAgent agent;
-	public current target = 0 ;
+	public  current target = 0 ;
+	current target = currentTarget;
+	currentTarget = "unitychan"
+
+
 
 	public GameObject target; 
 	private NavMeshAgent agent;
