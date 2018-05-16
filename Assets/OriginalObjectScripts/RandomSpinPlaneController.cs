@@ -19,8 +19,8 @@ public class RandomSpinPlaneController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (t < 1f) {
-      float prevT = t;
-      t = Math.Min(1f, t + Time.deltaTime); // 360度を超えないように
+      float prevT;
+      prevT = Math.Min(1f, t + Time.deltaTime); // 360度を超えないように
       float dt = t - prevT;
       transform.RotateAround(centor, axis, 360 * dt);
     }
