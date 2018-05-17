@@ -3,22 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HpBarController : MonoBehaviour {
-	Animation anim;
-	BoxCollider boxCollider;
-	int hp = 100;
-	// Use this for initialization
-	void Start () {
-		anim = GetComponent<Animation> ();
-		boxCollider = GetComponent<BoxCollider> ();
+	public readonly int maxHP = 100;    //体力の最大値
+	public int HP;    //体力
+	public int EnemyATK = 10;　　//敵の攻撃力
+
+
+
+	void Start(){
+		HP = maxHP; //初期体力を最大値にする
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+
+	void Update(){
+		if (HP <= 0){
+			Debug.Log("死亡しました");
+		}
 	}
-		void OnTriggerEnter(Collider other) {
-			if (other.name == "cutter01") {
-				anim.Play ("Allosaurus_Die");
-				Destroy (boxCollider);
-			}
+
+	void OnTriggerEnter(Collider hit){ 
+
+		if (hit.CompareTag("Bullet")){
+
+			HP -= EnemyATK; //攻撃で体力が減少
+			Debug.Log(HP); //HPを表示
+		}
 	}
 }

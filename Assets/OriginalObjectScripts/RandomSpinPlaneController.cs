@@ -20,7 +20,7 @@ public class RandomSpinPlaneController : MonoBehaviour {
 	void Update () {
 		if (t < 1f) {
       float prevT;
-      prevT = Math.Min(1f, t + Time.deltaTime); // 360度を超えないように
+      prevT = Mathf.Min(1f, t + Time.deltaTime); // 360度を超えないように
       float dt = t - prevT;
       transform.RotateAround(centor, axis, 360 * dt);
     }
