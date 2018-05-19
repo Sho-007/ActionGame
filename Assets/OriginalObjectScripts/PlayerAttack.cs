@@ -34,4 +34,9 @@ public class PlayerAttack : MonoBehaviour {
 			anim.SetBool ("SAMK", true);
 		}
 	}
+
+	void Reset(){
+		
+	}
+
 }
