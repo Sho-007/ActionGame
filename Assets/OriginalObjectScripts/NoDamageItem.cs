@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class NoDamageItem : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	public GameObject Destroyeffect;
+	public AudioClip get_audio;
+	public GameObject NoDamageItem
+
+
+	if (other.gameObject.tag == "Player") {
+		Destroy (gameObject);
+		Instantiate (Destroyeffect, transform.position, transform.rotation);
+		AudioSource.PlayClipAtPoint (get_audio, Camera.main.transform.position);
+		StartCoroutine ("destroy_effect");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+}
+
+IEnumerator destroy_effect()
+{
+	yield return new WaitForSeconds (0.5f);
+	Destroy (Destroyeffect);
+	Destroy (get_audio);
+}
 }
