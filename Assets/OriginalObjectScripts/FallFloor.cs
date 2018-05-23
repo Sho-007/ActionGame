@@ -15,9 +15,14 @@ public class FallFloor : MonoBehaviour {
 	}
 
 	void Update (){
+		if(totalTime > = timeFall) {
+			rigid.isKinematic = false;
+		}
 	}
 
-
+		public ReceiveForce(){
+			totalTime += Time.deltaTime;
+		}
 
 
 
