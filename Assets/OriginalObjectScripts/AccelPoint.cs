@@ -23,8 +23,9 @@ public class AccelPoint : MonoBehaviour {
 
 
  
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter (Collider other)
 	{
-		other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,10),
+		other.gameObject.GetComponent<Rigidbody> ().AddForce (new Vector3 (0, 0, 10),
 			ForceMode.VelocityChange);
-    }
+	}
+}
