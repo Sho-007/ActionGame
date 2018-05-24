@@ -9,6 +9,11 @@ public class NoDamageItem : MonoBehaviour {
 	public GameObject NoDamageItem
 
 
+	void Update(){
+
+
+	}
+
 	if (other.gameObject.tag == "Player") {
 		Destroy (gameObject);
 		Instantiate (Destroyeffect, transform.position, transform.rotation);
@@ -17,10 +22,9 @@ public class NoDamageItem : MonoBehaviour {
 	}
 }
 
-IEnumerator destroy_effect()
-{
-	yield return new WaitForSeconds (0.5f);
+IEnumerator NoDamageItem(){
 	Destroy (Destroyeffect);
 	Destroy (get_audio);
+	yeild return new WaitForSeconds (0.5f);
 }
 }
