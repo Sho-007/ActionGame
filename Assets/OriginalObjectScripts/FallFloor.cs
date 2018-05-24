@@ -6,22 +6,22 @@ public class FallFloor : MonoBehaviour {
 	private float timeToFall = 5f;
 
 	//操作キャラが乗っているトータルの時間
-	private float totalltime = 0;
+	private float totaltime = 0;
 	private Rigidbody rigid; 
 
 	void Start (){
 		rigid = GetComponent<Rigidbody> ();
-		rigid.isKinematic = true
+		rigid.isKinematic = true;
 	}
 
 	void Update (){
-		if(totalTime > = timeFall) {
+		if(totaltime >= timeFall) {
 			rigid.isKinematic = false;
 		}
 	}
-
-		public ReceiveForce(){
-			totalTime += Time.deltaTime;
+		
+	void ReceiveForce(){
+			totaltime += Time.deltaTime;
 		}
 
 
