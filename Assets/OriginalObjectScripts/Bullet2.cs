@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Bullet2 : MonoBehaviour {
 
+	public string name = "bullet";
+	public float speed = 3f;
+	public 
+
 	// Use this for initialization
 	void Start () {
 		//弾を3秒後に発射する
@@ -24,7 +28,6 @@ public class Bullet2 : MonoBehaviour {
 
 		transform.Translate (transform.forward * Time.deltaTime * speed);
 		
-	}
-
+			}
 }
 
