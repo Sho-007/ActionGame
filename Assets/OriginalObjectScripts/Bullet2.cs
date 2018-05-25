@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet2 : MonoBehaviour {
 
-	public string name = "bullet";
+	public string name = "bullet2";
 	public float speed = 3f;
 	public 
 
@@ -20,9 +20,9 @@ public class Bullet2 : MonoBehaviour {
 		if(Input.GetKeyDown("space")
 			{
 				//runcherbulletにbulletのインスタンスを格納
-				GameObject runcherBullet = GameObject.Instantiate(bullet) as GameObject; 
+				GameObject runcherBullet = GameObject.Instantiate(bullet2) as GameObject; 
 				//アタッチしているオブジェクト前方にbullet speedの速さで発射
-				runcherBullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+				runcherBullet.GetComponent<Rigidbody>().velocity = transform.forward * speed;
 				runcherBullet.transform.position = transform.position;
 			}
 
