@@ -15,7 +15,7 @@ public class FallFloor : MonoBehaviour {
 	}
 
 	void Update (){
-		if(totaltime >= timeFall) {
+		if(totaltime >= timeToFall) {
 			rigid.isKinematic = false;
 		}
 	}
