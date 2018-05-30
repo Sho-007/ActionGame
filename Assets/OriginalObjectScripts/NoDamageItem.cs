@@ -14,7 +14,7 @@ public class NoDamageItem : MonoBehaviour {
 
 	}
 
-	if (other.gameObject.tag == "Player") {
+	if(other.gameObject.tag == "Player") {
 		Destroy (gameObject);
 		Instantiate (Destroyeffect, transform.position, transform.rotation);
 		AudioSource.PlayClipAtPoint (get_audio, Camera.main.transform.position);

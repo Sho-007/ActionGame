@@ -4,6 +4,9 @@ using UnityEngine;
 
 [RequireComponent( typeof( NavMeshAgent ) )]
 public class  Warp :Warp 
+
+public class transform Warp
+
 {
 	[SerializeField]
 	private float   m_scaleTime = 0.0f;
