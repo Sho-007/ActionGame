@@ -1,4 +1,5 @@
-﻿Shader "LongJumpBoxSurfaceShader" {
+﻿//長距離ジャンプ台の色・金属光沢の調整
+Shader "LongJumpBoxSurfaceShader" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}

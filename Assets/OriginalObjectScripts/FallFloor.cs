@@ -19,14 +19,14 @@ public class FallFloor : MonoBehaviour {
 			rigid.isKinematic = false;
 		}
 	}
-		
+		//操作キャラの乗っている合計時間
 	void ReceiveForce(){
 			totaltime += Time.deltaTime;
 		}
 
 
 
-
+	//床の落下速度
 	void OnCollisionEnter(Collision collision){
 		if(collision.gameObject.CompareTag("Player")){
 			Invoke("Fall",2);
