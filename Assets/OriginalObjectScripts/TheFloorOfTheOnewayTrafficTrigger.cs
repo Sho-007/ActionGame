@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TheFloorOfTheOnewayTraffic : MonoBehaviour {
+public class TheFloorOfTheOnewayTrafficTrigger : MonoBehaviour {
 
 	public bool call_enter;
 	public bool call_exit;
