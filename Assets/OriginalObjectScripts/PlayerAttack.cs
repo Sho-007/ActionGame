@@ -13,6 +13,22 @@ public class PlayerAttack : MonoBehaviour {
 
 	void Update () {
 
+		// 地上にいるときに下入力した場合の処理
+		if (Input.GetAxis("Vertical") < -0.5f && charMotor.IsGrounded()) {
+			// すり抜け床の上にいる場合はレイヤーマスク変更
+			int sliding_floor_layer = LayerMask.NameToLayer("SlidingFloor");
+			if (Physics.Raycast(transform.position, -transform.up, sliding_floor_layer)) {
+				int player_layer = LayerMask.NameToLayer("Player");
+				Physics.IgnoreLayerCollision(player_layer, sliding_floor_layer);
+			}
+
+
+
+
+
+
+
+
 		// Qボタンを押すとパンチ
 		if (Input.GetKeyDown (KeyCode.Q)) {
 			anim.SetBool ("Jab", true);
