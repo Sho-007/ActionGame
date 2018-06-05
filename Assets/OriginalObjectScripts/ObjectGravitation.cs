@@ -19,4 +19,8 @@ public class ObjectGravitation : MonoBehaviour {
 		// 力を与える
 		rigidbody.AddForce(gravity * direction.normalized, ForceMode.Force);
 	}
+
+	try {
+		Road.RatGardRoad = 
+		
 }
