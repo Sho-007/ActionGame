@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ExtendController : MonoBehaviour {
 
-	public GameObject = GameObject;
+	public GameObject gameObject;
 
 
 	// Use this for initialization
-	void Start () {
-		
+	void OnTrigger () {
+		if (gameObject.tag =="")
 	}
 	
 	// Update is called once per frame
