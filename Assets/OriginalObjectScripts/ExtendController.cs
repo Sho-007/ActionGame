@@ -9,7 +9,7 @@ public class ExtendController : MonoBehaviour {
 
 	// Use this for initialization
 	void OnTrigger () {
-		if (gameObject.tag =="")
+		if (gameObject.tag =="EnemyDropObject")
 	}
 	
 	// Update is called once per frame
