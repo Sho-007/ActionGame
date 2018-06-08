@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class ObjectGravitation : MonoBehaviour {
 
+	public Vector3 localGravity;
+	public Rigidbody rb;
 	public GameObject Road;
 	public float coefficient;
+
+
+	void start(){
 
 	void FixedUpdate () {
 		// 道に向かう向きの取得
@@ -14,7 +19,7 @@ public class ObjectGravitation : MonoBehaviour {
 		var distance = direction.magnitude;
 		distance *= distance;
 		// 万有引力計算
-		var gravity = coefficient * Road.rigidbody.mass * rigidbody.mass / distance;
+		var gravity = coefficient * Road.rigidbody.min * rigidbody.max / distance;
 
 		// 力を与える
 		rigidbody.AddForce(gravity * direction.normalized, ForceMode.Force);
