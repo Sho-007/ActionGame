@@ -30,7 +30,7 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 	//Use this for intillization
 	void start () {
 		//体力セット
-		health =Random.Range(CommonConst.SpaceFighterEnemyLifeSt.SpaceFighterEnemyLifeEd);
+		health =Random.Range(0f,60.0f);
 
 		//アイテムドロップ時に以下のコメントアウトを解除
 		//Die();
@@ -55,7 +55,7 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 	void Die(){
 
 		//アイテムの落下ポジション保持
-		var itemLocation= gameObject.transform.positon;
+		var itemLocation= gameObject.transform.Vector3 positon;
 
 		//報酬はランダムなアイテムを個数落とす
 		var rewardItems = Random.Range(numHeldItemsMin,numHeldItemsMax);
