@@ -9,6 +9,10 @@ public class NoDamageItem : MonoBehaviour {
 	public GameObject NoDamageItem
 
 
+
+	void OnTriggerStay(Collider NoDamageItem){
+		PlayerHP
+
 	void Update(){
 
 
