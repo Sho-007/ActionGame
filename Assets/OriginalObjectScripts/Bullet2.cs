@@ -1,9 +1,9 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.AI;
 
 public class Bullet2 : MonoBehaviour {
-
 	public string name = "bullet2";
 	Bullet2 GameObject;
 	public float speed = 3f; //弾の速度
@@ -17,7 +17,19 @@ public class Bullet2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//弾を移動
+		void Update () {
+			//弾を移動
+			transform.rotation = Quarternion.Lerp(transform.rotation,
+				Quarternion.LookRotation(target.transform.position - transform.position),Time.deltaTime*3);
+			//自分が向いている方角のベクトルを取り出す
+			Vector3 front = transform.TransformDirecion(Vector3.forward);
+			//その方向に向かう力を与える
+			this GetComponent<Rigidbody>().AddForce(front*0.3f,ForceMode.VelocityChange);
+		}
+	}
+
+
+
 		if(EnemyTargetTrigger)
 			{
 				//runcherbulletにbulletのインスタンスを格納
