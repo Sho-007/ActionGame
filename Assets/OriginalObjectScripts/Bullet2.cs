@@ -17,7 +17,6 @@ public class Bullet2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		void Update () {
 			//弾を移動
 			transform.rotation = Quarternion.Lerp(transform.rotation,
 				Quarternion.LookRotation(target.transform.position - transform.position),Time.deltaTime*3);
@@ -25,7 +24,7 @@ public class Bullet2 : MonoBehaviour {
 			Vector3 front = transform.TransformDirecion(Vector3.forward);
 			//その方向に向かう力を与える
 			this GetComponent<Rigidbody>().AddForce(front*0.3f,ForceMode.VelocityChange);
-		}
+		
 	}
 
 
