@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent( typeof( NavMeshAgent ) )]
-public class  Warp :Warp 
-
-public class transform Warp
+public class  Warp :MonoBehaviour
 
 {
 	[SerializeField]
