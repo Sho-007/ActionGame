@@ -11,10 +11,13 @@ public class NoDamageItem : MonoBehaviour {
 
 	public GameObject NoDamageItem
 
+	void Start(){
+		StartCoroutine ();
+	}
 
 
 	void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag == "Player"{
+		if (other.gameObject.tag == "Player"){
 			Destroy(gameObject);
 			Instantiate(Destroyeffect,transform.position,transform.rotation);
 			AudioSource.P
