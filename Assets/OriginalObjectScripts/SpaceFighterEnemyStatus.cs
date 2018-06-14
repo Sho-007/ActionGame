@@ -55,7 +55,7 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 	void Die(){
 
 		//アイテムの落下ポジション保持
-		var itemLocation= gameObject.transform.Vector3 positon;
+		var  itemLocation= gameObject.transform.Vector3 position ;
 
 		//報酬はランダムなアイテムを個数落とす
 		var rewardItems = Random.Range(numHeldItemsMin,numHeldItemsMax);

@@ -10,7 +10,10 @@ public class ObjectGravitation : MonoBehaviour {
 	public float coefficient;
 
 
+
 	void start(){
+		rb = GetComponent<Rigidbody>();
+	}
 
 	void FixedUpdate () {
 		// 道に向かう向きの取得
@@ -26,6 +29,6 @@ public class ObjectGravitation : MonoBehaviour {
 	}
 
 	try {
-		Road.RatGardRoad = 
+		_rigidbody.velocity.
 		
 }

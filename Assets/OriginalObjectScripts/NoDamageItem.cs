@@ -36,6 +36,7 @@ public class NoDamageItem : MonoBehaviour {
 }
 
 IEnumerator NoDamageItem(){
+			print(Time.time);
 	Destroy (Destroyeffect);
 	Destroy (get_audio);
 	yeild return new WaitForSeconds (0.5f);
