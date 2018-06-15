@@ -6,16 +6,20 @@ public class ObjectGravitation : MonoBehaviour {
 
 	public Vector3 localGravity;
 	public Rigidbody rb;
-	public GameObject Road;
 	public float coefficient;
 
+	void OnCollisionEnter(Collision collision){
+		if (collision.gameobject.name == "RatGuardRoad")
+		{
+			if (collision.gameobject.tag =="GravitationRoad")
+			{
+	}
 
-
-	void start(){
+	void Start(){
 		rb = GetComponent<Rigidbody>();
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate() {
 		// 道に向かう向きの取得
 		var direction = Road.transform.position - transform.position;
 		// 道までの距離の２乗を取得
@@ -28,7 +32,8 @@ public class ObjectGravitation : MonoBehaviour {
 		rigidbody.AddForce(gravity * direction.normalized, ForceMode.Force);
 	}
 
-	try {
-		_rigidbody.velocity.
+			try() {
+				_rigidbody.velocity.;
+			}
 		
 }
