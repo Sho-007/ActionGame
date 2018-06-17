@@ -20,6 +20,7 @@ public class ObjectGravitation : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+				SetLocalGravity();
 		// 道に向かう向きの取得
 		var direction = Road.transform.position - transform.position;
 		// 道までの距離の２乗を取得
@@ -32,8 +33,7 @@ public class ObjectGravitation : MonoBehaviour {
 		rigidbody.AddForce(gravity * direction.normalized, ForceMode.Force);
 	}
 
-			try() {
-				_rigidbody.velocity.;
-			}
-		
-}
+			void SetLocalGrabity(){
+		rb.AddForce (localGravity, ForceMode.Acceleration);
+	}
+	}
