@@ -9,7 +9,7 @@ public class NoDamageItem : MonoBehaviour {
 	public GameObject NoDamageItem_get_effect;
 	public 
 
-	public GameObject NoDamageItem
+	private GameObject NoDamageItem
 
 	void Start(){
 		StartCoroutine ();
