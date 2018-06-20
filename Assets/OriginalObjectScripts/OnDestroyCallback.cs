@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class CallbackDestroy : MonoBehaviour {
+public class OnDestroyCallback : MonoBehaviour {
 
 	Action onDestroy;
 
