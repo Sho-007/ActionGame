@@ -6,6 +6,41 @@ public class ExtendController : MonoBehaviour {
 
 	public GameObject gameObject;
 
+	// ロックオン対象の敵を取得
+	private GameObject GetTargetEnemy(bool isNearestPlayer = false, bool isScreenCentral = false)
+	{
+		var enemys = GameObject.FindGameObjectsWithTag("Enemy")
+			.Where(enemy => enemy.GetComponent<BaseEnemy>().IsVisible() == true)                                                    // 画面内にいるか
+			.Where(enemy => Camera.main.WorldToScreenPoint(enemy.transform.position).z > -(mainCamera.transform.localPosition.z))   // カメラから見てプレイヤーより遠くにいるか
+			.Where(enemy => Vector3.Distance(transform.position, enemy.transform.position) < lockonMaxDistance)                     // ロックオン可能範囲にいるか
+			.Where(enemy => RaycastEnemy(enemy) == true);                                                                           // 射線が通るか
+
+		// プレイヤーに一番近い敵を取得
+		if (isNearestPlayer)
+		{
+			enemys = enemys.OrderBy(enemy => Vector3.Distance(transform.position, enemy.transform.position));
+		}
+
+		// 画面中央に一番近い敵を取得
+		if (isScreenCentral)
+		{
+			enemys = enemys.OrderBy(enemy => Vector2.Distance(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f), Camera.main.WorldToScreenPoint(enemy.transform.position)));
+		}
+
+		return enemys.FirstOrDefault();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// Use this for initialization
 	void OnTrigger () {
