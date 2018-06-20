@@ -7,6 +7,8 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 	//体力
 	float health;
 
+	public GameObject spacefighterenemy;
+
 	//生死判別フラグ
 	bool dieFlg = false;                         
 
@@ -25,6 +27,20 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 	int dropItemRangeSt = 0;  //最小アイテム設定値
 	int dropItemRangeEd = 10; //最大アイテム設定値
 	#endregion
+
+	private void Awake(){
+		spacefighterenemy.AddOnDestroyCallback (() => Debug.Log ("死亡"));
+
+	}
+
+	private void Update(){
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			Destroy (spacefighterenemy);
+		}
+	}
+	}
+
+
 
 	#region "Load時処理"
 	//Use this for intillization
