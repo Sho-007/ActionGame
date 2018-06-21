@@ -17,7 +17,7 @@ public class Bullet2 : MonoBehaviour {
 	public float speed = 5000;
 
 	//連射時設定
-	private float time 0f;
+	private float time = 0f;
 	public float interval = 0.3f;
 
 	void Start(){
@@ -29,13 +29,16 @@ public class Bullet2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
+		float step = speed * Time.delataTime;
 		GameObject unitychan  = GameObject.Find("unitychan");
-		float speed = 1.0f
-		transform.position = Vector3.MoveTowards(transform.position, unitychan.transform,position, step);
+		float speed = 1.0f;
+		transform.position = Vector3.MoveTowards(transform.position, unitychan.transform,position,step);
 	}		
 
-	void OnCollisionEnter(otherObjct.Collision){
-		if(otherObject.tag = "Player"){
+	void OnCollisionEnter(Collision.col){
+		if(col.gameobject.tag == Player){
+			Destroy(col.Player);
+		}
 			
 	}
 	}
