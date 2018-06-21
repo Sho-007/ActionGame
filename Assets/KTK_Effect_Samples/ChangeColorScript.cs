@@ -35,9 +35,11 @@ public class ChangeColorScript : MonoBehaviour {
 		Debug.Log(Cube.renderer.material.color);
 
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		Ray ray new Ray(Camera
+	}
+			void OnCollisionEnter(){
+				
 	}
 }
