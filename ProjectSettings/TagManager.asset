@@ -8,6 +8,7 @@ TagManager:
   - GravitationRoad
   - Enemy
   - NormalItem
+  - EnemyBullets
   layers:
   - Default
   - TransparentFX
