@@ -44,7 +44,7 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 
 	#region "Load時処理"
 	//Use this for intillization
-	void start () {
+	void Start() {
 		//体力セット
 		health =Random.Range(0f,60.0f);
 
