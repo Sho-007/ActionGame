@@ -22,12 +22,12 @@ public class ObjectGravitation : MonoBehaviour {
 	void FixedUpdate() {
 				SetLocalGravity();
 		// 道に向かう向きの取得
-		var direction = Road.transform.position - transform.position;
+		var direction = RatGuardRoad.transform.position - transform.position;
 		// 道までの距離の２乗を取得
 		var distance = direction.magnitude;
 		distance *= distance;
 		// 万有引力計算
-		var gravity = coefficient * Road.rigidbody.min * rigidbody.max / distance;
+		var gravity = coefficient * RatGuardRoad.rigidbody.min * rigidbody.max / distance;
 
 		// 力を与える
 		rigidbody.AddForce(gravity * direction.normalized, ForceMode.Force);
