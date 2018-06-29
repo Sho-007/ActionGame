@@ -7,7 +7,6 @@ public class NoDamageItem : MonoBehaviour {
 	public GameObject Destroyeffect;
 	public AudioClip get_audio;
 	public GameObject NoDamageItem_get_effect;
-	public 
 
 	private GameObject NoDamageItem
 

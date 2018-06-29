@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
+using System.Collections;
 
 [RequireComponent( typeof( NavMeshAgent ) )]
-public class  Warp :MonoBehaviour
+public class  Warp :ObjectController
 
 {
 	[SerializeField]
