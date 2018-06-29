@@ -1,26 +1,85 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ObjectController : MonoBehaviour {
-
-	public void EnemyController (){
-		int hp = 0;
-			
-	}
-
-
-
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+﻿using UnityEngine;
+using UnityEngine.AI;
+using System.Collections;
 	
-	// Update is called once per frame
-	void Update () {
-		if (hp = 0){
-			
+	[RequireComponent(typeof(NavMeshAgent))]
+	public class ObjectController : MonoBehaviour{
+		[SerializeField]
+		private Transform[] m_targets = null;
+		[SerializeField]
+		private float m_destinationThreshould = 0.0f;
+
+		protected NavMeshAgent m_navAgent = null;
+
+		private int m_targetIndex = 0;
+
+		private Vector3 CurrentTargetPosition{
+			get
+			{
+				if(m_targets == null || m_targets.Length <= m_targetIndex )
+				{
+					return Vector3.zero;
+				}
+
+				return m_targets [m_targetIndex].position;
+			}
+		}
+
+		protected virtual void Start()
+		{
+			m_navAgent = GetComponent<NavMeshAgent>();
+			m_navAgent.destination = CurrentTargetPosition;
+
+
+			StartCoroutine(UpdateOffMeshLink() );
+		}
+
+		private void Update(){
+			if(m_navAgent.remainingDistance <= m_destinationThreshould)
+			{
+				m_targetIndex = (m_targetIndex +1)%m_targets.Length;
+
+				m_navAgents.destination = CurrentTargetPosition;
+			}
+		}
+
+		private IEnumerator UpdateOffMeshLink(){
+			//オフメッシュリンクの挙動が自動モードならこの処理は行わない
+			if(m_navAgent.autoTraverseOffMeshLink)
+			{
+				yield break;
+			}
+
+			while(!m_navAgent.isOnOffMeshLink)
+			{
+				yield return null;
+			}
+
+			//NavMeshの挙動を止めます
+			m_navAgent.isStopped = null ;
+
+
+			//オフメッシュリンクと高さに差があるために微調整をする
+			OffMeshLinkData offMeshLinkData = m_navAgent.currentOffMeshLinkData;
+			Vector3 targetPos = offMeshLinkData.endPos;
+			targetPos.y       += transform.position.y - offMeshLinkData.startPos.y;
+
+
+			yield return OffMeshLinkProcess( targetPos );
+
+			//オフメッシュリンクの計算を完了する
+			m_navAgent.CompleteOffMeshLink();
+
+			//NavMeshの挙動を再開する
+			m_navAgent.isStopped = false;
 		}
 	}
-}
+
+	protected virtual IEnuemerator OffMeshLinkProcess( Vector3 i_targetPos)
+	{
+		yield return null;
+	}
+
+
+
+	}
