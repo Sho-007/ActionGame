@@ -29,15 +29,15 @@ public class Bullet2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		time += Time.deltaTime;
-		float step = speed * Time.delataTime;
+		float step = speed * Time.deltaTime;
 		GameObject unitychan  = GameObject.Find("unitychan");
 		float speed = 1.0f;
-		transform.position = Vector3.MoveTowards(transform.position, unitychan.transform,position,step);
+		transform.position = Vector3.MoveTowards(transform.position, unitychan.transform.position,step);
 	}		
 
-	void OnCollisionEnter(Collision.col){
-		if(col.gameobject.tag == Player){
-			Destroy(col.Player);
+	void OnCollisionEnter(Collision col){
+		if(col.gameObject.tag == "Player"){
+			Destroy(col.gameObject);
 		}
 			
 	}
