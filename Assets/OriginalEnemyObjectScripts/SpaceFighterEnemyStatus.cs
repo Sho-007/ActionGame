@@ -38,7 +38,6 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 			Destroy (spacefighterenemy);
 		}
 	}
-	}
 
 
 
@@ -74,7 +73,7 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 		var  itemLocation= gameObject.transform.position ;
 
 		//報酬はランダムなアイテムを個数落とす
-		var rewardItems = Random.Range(numHeldItemsMin,numHeldItemsMax);
+		var rewardItems = Random.Range(numHelditemsMin,numHelditemsMax);
 
 		for(var i = 0;i < rewardItems; i++){
 			var randomItemLocation = itemLocation;
@@ -83,7 +82,7 @@ public class SpaceFighterEnemyStatus : MonoBehaviour {
 			randomItemLocation.z +=Random.Range(-2,2);
 
 			//ドロップアイテム設定値に合わせた範囲内での乱数を決定する
-			int itemValue =Random.Range(dropItemsRangeSt,dropItemRangeEd);
+			int itemValue =Random.Range(dropItemRangeSt,dropItemRangeEd);
 			//乱数に応じて出現させるアイテムを変化させる
 			switch (itemValue){
 				case 10:
