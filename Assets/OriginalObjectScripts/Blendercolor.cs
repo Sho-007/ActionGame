@@ -11,7 +11,7 @@ public class Blendercolor : RenderPipelineAsset
 	[UnityEditor.MenuItem("SRP-Demo/01 - Create Basic Asset Pipeline")]
 	static void CreateBasicAssetPipeline()
 	{
-		var instance = ScriptableObject.CreateInstance<BasicAssetPipe>();
+		var instance = ScriptableObject.CreateInstance<BasicPipeInstance>();
 		UnityEditor.AssetDatabase.CreateAsset(instance, "Assets/SRP-Demo/1-BasicAssetPipe/BasicAssetPipe.asset");
 	}
 	#endif
@@ -31,7 +31,7 @@ public class BasicPipeInstance : RenderPipeline
 		m_ClearColor = clearColor;
 	}
 
-	public override void Render(ScriptableRenderContext context, Camera[] cameras)
+	 void Render(ScriptableRenderContext context, Camera[] cameras)
 	{
 		// does not so much yet :()
 		base.Render(context, cameras);
