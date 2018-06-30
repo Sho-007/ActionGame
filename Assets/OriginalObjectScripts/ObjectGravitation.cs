@@ -7,16 +7,18 @@ public class ObjectGravitation : MonoBehaviour {
 	public Vector3 localGravity;
 	public Rigidbody rb;
 	public float coefficient;
+	GameObject RatGuardRoad;
+	GameObject unitychan;
 
 	void OnCollisionEnter(Collision collision){
-		if (collision.gameobject.name == "RatGuardRoad")
-		{
-			if (collision.gameobject.tag =="GravitationRoad")
-			{
+		if (collision.gameObject.name == "RatGuardRoad") {
+			if (collision.gameObject.tag == "GravitationRoad") {
+			}
+		}
 	}
 
 	void Start(){
-		rb = GetComponent<Rigidbody>();
+		rb = unitychan.GetComponent<Rigidbody>();
 	}
 
 	void FixedUpdate() {
@@ -27,13 +29,13 @@ public class ObjectGravitation : MonoBehaviour {
 		var distance = direction.magnitude;
 		distance *= distance;
 		// 万有引力計算
-		var gravity = coefficient * RatGuardRoad.rigidbody.min * rigidbody.max / distance;
+		var gravity = coefficient * rb.mass * rb.mass / distance;
 
 		// 力を与える
-		rigidbody.AddForce(gravity * direction.normalized, ForceMode.Force);
+		rb.AddForce(gravity * direction.normalized, ForceMode.Force);
 	}
 
-			void SetLocalGrabity(){
+			void SetLocalGravity(){
 		rb.AddForce (localGravity, ForceMode.Acceleration);
 	}
 	}
