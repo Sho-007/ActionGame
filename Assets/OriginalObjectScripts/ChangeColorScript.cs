@@ -15,9 +15,9 @@ public class ChangeColorScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		CubeRenderer = GetComponent<Renderer>;
+		CubeRenderer = GetComponent<Renderer>();
 
-		CubeRenderer.material.color = Color.red
+		CubeRenderer.material.color = Color.red;
 
 
 
@@ -26,18 +26,18 @@ public class ChangeColorScript : MonoBehaviour {
 		Cube = GameObject.Find("CubeName");
 
 		//今の色コンソールに出力
-		Debug.Log(Cube.render.material.color);
+		Debug.Log(CubeRenderer.material.color);
 
 		//青色に変更
-		Cube.renderer.material.color = Color.blue;
+		CubeRenderer.material.color = Color.blue;
 
 		//変更後のコンソールに出力
-		Debug.Log(Cube.renderer.material.color);
+		Debug.Log(CubeRenderer.material.color);
 
 	}
 	// Update is called once per frame
 	void Update () {
-		Ray ray new Ray(Camera
+		Ray ray;// = new Ray(Camera
 	}
 			void OnCollisionEnter(){
 				
