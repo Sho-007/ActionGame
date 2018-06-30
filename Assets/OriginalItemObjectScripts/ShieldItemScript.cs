@@ -7,20 +7,20 @@ public class ShieldItemScript : MonoBehaviour {
 
 	public GameObject effectPrefab;
 	public AudioClip getSound;
-	public GameObject shieldPrehab;
+	public GameObject shieldPrefab;
 
 	private GameObject unitychan;
 	private Vector3 pos;
 
-	void OnTriggerEnter(Collider.other){
+	void OnTriggerEnter(Collider other){
 		if(other.CompareTag("EnemyBullets")){
 			
 			//エフェクトと効果音を発生させる
 			Instantiate(effectPrefab,transform.position,Quaternion.identity);
-			AudioSource.PlayClipAtPoint (getSound,Camera.main.transform.position);
+			AudioSource.PlayClipAtPoint (getSound,UnityEngine.Camera.main.transform.position);
 
 			//プレイヤーの位置情報を取得する
-			unitychan = GameObject.FindWithTah("Player");
+			unitychan = GameObject.FindWithTag("Player");
 			pos = unitychan.transform.position;
 
 
