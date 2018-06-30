@@ -8,7 +8,7 @@ public class NoDamageItem : MonoBehaviour {
 	public AudioClip get_audio;
 	public GameObject NoDamageItem_get_effect;
 
-	private GameObject NoDamageItem
+	private GameObject noDamageItem;
 
 	void Start(){
 		StartCoroutine ();
@@ -16,28 +16,25 @@ public class NoDamageItem : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag == "Player"){
-			Destroy(gameObject);
-			Instantiate(Destroyeffect,transform.position,transform.rotation);
-			AudioSource.P
+		if (other.gameObject.tag == "Player") {
+			Destroy (gameObject);
+			Instantiate (Destroyeffect, transform.position, transform.rotation);
+			AudioSource.Play (get_audio);
+		}
+	}
 
 	void Update(){
+				
 
 
 	}
 
-	if(other.gameObject.tag == "Player") {
-		Destroy (gameObject);
-		Instantiate (Destroyeffect, transform.position, transform.rotation);
-				AudioSource.PlayClipAtPoint (get_audio, Camera.main.transform.position);
-		StartCoroutine ("destroy_effect");
-	}
-}
 
-IEnumerator NoDamageItem(){
+
+IEnumerator NodamageItem(){
 			print(Time.time);
 	Destroy (Destroyeffect);
 	Destroy (get_audio);
-	yeild return new WaitForSeconds (0.5f);
+	yield return new WaitForSeconds (0.5f);
 }
 }
