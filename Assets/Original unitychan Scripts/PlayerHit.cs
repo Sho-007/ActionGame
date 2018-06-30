@@ -6,9 +6,9 @@ public class PlayerHit : MonoBehaviour {
  
     public float power, time;
     public GameObject damageEffect;
-    public Player pc;
+    //public Player pc;
  
-    protected override void Start () {
+     void Start () {
         if (time != 0) {
             StartCoroutine(DestroyHit());
         }
@@ -20,11 +20,11 @@ public class PlayerHit : MonoBehaviour {
     }
  
     protected virtual void OnTriggerEnter(Collider c){
-        if (TagUtility.getParentTagName(character.getGameObject().tag) == "Player") {
-            if (TagUtility.getParentTagName(c.gameObject) == "Enemy") {
-                c.GetComponent<Enemy>().damage(power);
-                Instantiate(damageEffect, transform.position, Quaternion.identity);
-            }
-        }
+       // if (TagUtility.getParentTagName(character.getGameObject().tag) == "Player") {
+          //  if (TagUtility.getParentTagName(c.gameObject) == "Enemy") {
+          //      c.GetComponent<Enemy>().damage(power);
+              //  Instantiate(damageEffect, transform.position, Quaternion.identity);
+        //    }
+        //}
     }
 }
