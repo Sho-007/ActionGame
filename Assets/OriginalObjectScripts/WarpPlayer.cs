@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WarpPlayer : MonoBehaviour {
 
-	public enum WarpStatePlayerstate {
+	public enum WarpPlayerState {
 		normal,
 		goToWarpPoint,
 	};
@@ -14,7 +14,7 @@ public class WarpPlayer : MonoBehaviour {
 	private WarpPlayerState state;
 	private Transform waitPoint;
 	private Transform warpPoint;
-	private InstantiateParticle instantiateParticle;
+	// InstantiateParticle instantiateParticle;
 	//　歩く速さ
 	public float walkSpeed;
 	//　ワープポイントでキャラクターを中央に移動させたり回転させたりするスピード
