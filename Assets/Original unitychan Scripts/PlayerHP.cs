@@ -34,4 +34,4 @@ public class PlayerHP : MonoBehaviour {
 		Debug.Log (HP);
 	}
 }
-}
+
