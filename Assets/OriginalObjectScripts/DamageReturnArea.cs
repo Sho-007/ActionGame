@@ -8,7 +8,7 @@ public class DamageReturnArea : MonoBehaviour {
     private Transform returnPoint;
  
     void Start() {
-        returnPoint = transform.FindChild("ReturnPoint");
+        returnPoint = transform.Find("ReturnPoint");
     }
  
     private void OnTriggerEnter(Collider c) {
