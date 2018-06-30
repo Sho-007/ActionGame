@@ -22,6 +22,7 @@ public class EnemyTargetTrigger : MonoBehaviour {
 			GetComponentInParent<MoveEnemy> ().SetState ("chase", col.transform);
 		}
 		}
+	}
 
 		public void Setstate(){
 			
