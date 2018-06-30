@@ -39,7 +39,7 @@ using System.Collections;
 			{
 				m_targetIndex = (m_targetIndex +1)%m_targets.Length;
 
-				m_navAgents.destination = CurrentTargetPosition;
+				m_navAgent.destination = CurrentTargetPosition;
 			}
 		}
 
@@ -73,9 +73,9 @@ using System.Collections;
 			//NavMeshの挙動を再開する
 			m_navAgent.isStopped = false;
 		}
-	}
 
-	protected virtual IEnuemerator OffMeshLinkProcess( Vector3 i_targetPos)
+
+	protected virtual IEnumerator OffMeshLinkProcess( Vector3 i_targetPos)
 	{
 		yield return null;
 	}
