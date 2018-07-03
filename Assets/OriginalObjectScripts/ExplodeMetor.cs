@@ -31,7 +31,7 @@ public class ExplodeMetor : MonoBehaviour {
 	void Update() {
 		RaycastHit hit;
 
-		if (Physics.Raycast (Camera.main.ScreenPointToRay (Input.mousePosition), out hit)) {
+		if (Physics.Raycast (UnityEngine.Camera.main.ScreenPointToRay (Input.mousePosition), out hit)) {
 			Instantiate (explosionPrefab, hit.point, Quaternion.identity);
 		}
 	}

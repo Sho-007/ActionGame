@@ -23,7 +23,7 @@ public class PlayerHP : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (HP <= 0) {
-			Debug.Log ();
+			Debug.Log (HP);
 		}
 	}
 

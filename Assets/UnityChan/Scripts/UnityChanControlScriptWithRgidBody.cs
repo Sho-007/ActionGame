@@ -186,6 +186,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
 		}
 	}
 
+
 	void OnGUI()
 	{
 		GUI.Box(new Rect(Screen.width -260, 10 ,250 ,150), "Interaction");

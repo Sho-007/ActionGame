@@ -10,7 +10,7 @@ public class ThroughBlockController : MonoBehaviour {
 	void Start()
 	{
 		boxCollider = GetComponent<BoxCollider>();
-		separateBlocks = GetComponentsInChildren<Rigidbody>().ToList();
+		separateBlocks = GetComponentsInChildren<Rigidbody>().ToList<Rigidbody>();
 	}
 
 	private void OnChildTriggerEnter(Collider c)
