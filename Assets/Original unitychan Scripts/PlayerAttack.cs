@@ -6,9 +6,8 @@ public class PlayerAttack : MonoBehaviour {
 
 	private Animator anim;
 	public AudioClip punchSound;
-	Bullet2 player;
 	void Start () {
-		player.speed;
+		
 		anim = GetComponent<Animator> ();	
 	}
 

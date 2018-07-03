@@ -10,7 +10,7 @@ public class PlayerDestroy : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.CompareTag ("Enemy")) {
 			Destroy (other.gameObject);
-			AudioSource.PlayClipAtPoint (effectSound, Camera.main.transform.position);
+			AudioSource.PlayClipAtPoint (effectSound, UnityEngine.Camera.main.transform.position);
 
 			GameObject effect = (GameObject)Instantiate (effectPrefab, other.transform.position, Quaternion.identity);
 			Destroy (effect, 0.5f);
