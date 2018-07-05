@@ -8,7 +8,10 @@ public class EnemyDropObject : MonoBehaviour {
 
 	void Start ()
 	{
-		number = Random.Range (0, Train.Length);
+		for (int number = 0;number < 10; number++)
+		{
+		number= Random.Range (0, Train.Length);
 		Instantiate(Train[number],transform.position,transform.rotation);
+		}
 	}
 }
