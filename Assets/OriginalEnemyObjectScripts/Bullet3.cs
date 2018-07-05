@@ -32,6 +32,6 @@ public class Bullet3 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		this.GameObject.transform.LookAt (target.transform.position);
+		this.gameObject.transform.LookAt (target.transform.position);
 	}
 }
