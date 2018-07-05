@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.AI;
+using System;
 
 public class Bullet2 : MonoBehaviour {
 
