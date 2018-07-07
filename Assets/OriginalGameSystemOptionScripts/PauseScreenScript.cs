@@ -8,16 +8,16 @@ public class PauseScreenScript : MonoBehaviour {
 	//ポーズした時に表示するUI
 	private GameObject pauaseUI;
 	//ポーズUIのインスタンス
-	private GameObject instancePauseUi;
+	private GameObject instancePauseUI;
 
 	//Update is called once per frame
 	void Update (){
-		if (Input.GetKeyDown ("q")) {
+		if (Input.GetKeyDown ("h")) {
 			if (instancePauseUI == null) {
-				instancePauseUI = GameObject.Instantiate (pauseUI) as GameObject;
+				instancePauseUI = GameObject.Instantiate (pauaseUI) as GameObject;
 				Time.timeScale = 0f;
 			} else {
-				Destroy (instancepauseUI);
+				Destroy(instancePauseUI);
 				Time.timeScale = 1f;
 			}
 		}
