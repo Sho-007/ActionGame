@@ -17,7 +17,9 @@ public class ThroughBlockController : MonoBehaviour {
 	{
 		if (c.gameObject.tag == "Player") {
 			boxCollider.enabled = false;
-
+		}
+		else
+		{
 			var random = new System.Random();
 			var min = -3;
 			var max = 3;
