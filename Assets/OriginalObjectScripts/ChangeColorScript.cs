@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeColorScript : MonoBehaviour {
 
@@ -37,9 +39,17 @@ public class ChangeColorScript : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		Ray ray;// = new Ray(Camera
+		if (Input.GetMouseButtonDown(0)){
+
+			RaycastHit hit;
+			//カメラから見たRay
+		
+			Ray ray = UnityEngine.Camera.ScreenPointToRay(Input.mousePosition);
+
+				//Rayを投射してオブジェクトを検出
+				if(Physics.Raycast(ray,out hit)){
+					print(hit.collider.gameObject);
 	}
-			void OnCollisionEnter(){
-				
-	}
+				}
+				}
 }
