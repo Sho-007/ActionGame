@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceFighterEnemyStatus : MonoBehaviour {
+public class SpaceFighterEnemyState : MonoBehaviour {
 	#region "変数・定数の宣言"
 	//体力
 	float health;
