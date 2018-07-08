@@ -56,7 +56,7 @@ using System.Collections;
 			}
 
 			//NavMeshの挙動を止めます
-			m_navAgent.isStopped = null ;
+			
 
 
 			//オフメッシュリンクと高さに差があるために微調整をする
