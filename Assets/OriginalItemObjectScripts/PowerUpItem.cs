@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUpItem : MonoBehaviour {
 
@@ -21,15 +22,15 @@ public class PowerUpItem : MonoBehaviour {
 			Instantiate (effectPrefab, transform.position, Quaternion.identity);
 
 			// 効果音を出す
-			AudioSource.PlayClipAtPoint(getSound, Camera.main.transform.position);
+			AudioSource.PlayClipAtPoint(getSound, UnityEngine.Camera.main.transform.position);
 
 			// アイテムを画面から消す（非アクティブ状態にする）（ポイント）
 			// ここでアイテムを破壊（Destror）するとメモリ上から消えて「Nomalメソッド」が実行されなくなるので注意！
 			this.gameObject.SetActive(false);
 
 			// 「FireMissile」スクリプトを有効にする。（ポイント）
-			fireMissilePod1.GetComponent<FireMissile> ().enabled = true;
-			fireMissilePod2.GetComponent<FireMissile> ().enabled = true;
+			fireMissilePod1.GetComponent<FireMissile>().enabled = true;
+			fireMissilePod2.GetComponent<FireMissile>().enabled = true;
 
 			// 3秒後に元の状態（攻撃力）に戻す。
 			Invoke ("Normal", 3);
