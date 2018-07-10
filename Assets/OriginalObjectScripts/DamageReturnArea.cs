@@ -11,12 +11,12 @@ public class DamageReturnArea : MonoBehaviour {
         returnPoint = transform.Find("ReturnPoint");
     }
  
-    private void OnTriggerEnter(Collider c) {
-        string tag = TagUtility.getParentTagName(c.gameObject);
+    private void OnTriggerEnter(Collider collider) {
+        string tag = TagUtility.getParentTagName(collider.gameObject);
  
-        if (tag == "Player") {
-            c.GetComponent<Player>().forceDownDamage(this);
-            StartCoroutine("returnCharacter", c.gameObject);
+        if (gameObject.tag == "Player") {
+			collider.GetComponent<Player>();forceDownDamage(this);
+            StartCoroutine("returnCharacter", collider.gameObject);
         }
     }
  
