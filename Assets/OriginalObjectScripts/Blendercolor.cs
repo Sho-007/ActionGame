@@ -34,7 +34,7 @@ public class BasicPipeInstance : RenderPipeline
 	 void Render(ScriptableRenderContext context, Camera[] cameras)
 	{
 		// does not so much yet :()
-		base.Render(context, cameras);
+		//base.Render(context, Camera[] cameras);
 
 		// clear buffers to the configured color
 		var cmd = new CommandBuffer();
