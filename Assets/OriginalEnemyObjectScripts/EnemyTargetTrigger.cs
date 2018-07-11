@@ -6,7 +6,16 @@ public class EnemyTargetTrigger : MonoBehaviour {
 
 	GameObject tagObjects;
 
+
 	void Start(){
+		enemyController = GetComponent <CharacterController> ();
+		animator = GetComponent <Animator> ();
+		setPosition = GetComponent <SetPosition> ();
+		setPosition.CreateRandomPosition ();
+		velocity = Vector3.zero;
+		arrived = false;
+		elapsedTime = 0f;
+		SetState ("wait");
 	}
 
 
@@ -15,6 +24,8 @@ public class EnemyTargetTrigger : MonoBehaviour {
 	void OnTriggerStay(Collision collision){
 		//プレイヤーの発見
 		if (gameObject.tag == "Player") {
+			//
+			gameObject.tag == "Player"
 		}
 	}
 
@@ -33,8 +44,29 @@ public class EnemyTargetTrigger : MonoBehaviour {
 		}
 	}
 
-		public void Setstate(){
-			
+
+	//　敵キャラクターの状態変更メソッド
+	public void SetState(string mode, Transform obj = null) {
+		if(mode == "walk") {
+			arrived = false;
+			elapsedTime = 0f;
+			state = EnemyState.Walk;
+			setPosition.CreateRandomPosition ();
+		} else if(mode == "chase") {
+			state = EnemyState.Chase;
+			//　待機状態から追いかける場合もあるのでOff
+			arrived = false;
+			//　追いかける対象をセット
+			playerTransform = obj;
+		} else if(mode == "wait") {
+			elapsedTime = 0f;
+			state = EnemyState.Wait;
+			arrived = true;
+			velocity = Vector3.zero;
+			animator.SetFloat ("Speed", 0f);
 		}
+	}
+
+
 
 }
