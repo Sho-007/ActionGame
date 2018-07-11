@@ -29,8 +29,8 @@ public class PowerUpItem : MonoBehaviour {
 			this.gameObject.SetActive(false);
 
 			// 「FireMissile」スクリプトを有効にする。（ポイント）
-			fireMissilePod1.GetComponent<FireMissile>().enabled = true;
-			fireMissilePod2.GetComponent<FireMissile>().enabled = true;
+			fireMissilePod1.GetComponent<Bullet>().enabled = true;
+			fireMissilePod2.GetComponent<Bullet2>().enabled = true;
 
 			// 3秒後に元の状態（攻撃力）に戻す。
 			Invoke ("Normal", 3);
@@ -41,8 +41,8 @@ public class PowerUpItem : MonoBehaviour {
 	void Normal(){
 
 		// 「FireMissile」スクリプトを無効にする。（ポイント）
-		fireMissilePod1.GetComponent<FireMissile> ().enabled = false;
-		fireMissilePod2.GetComponent<FireMissile> ().enabled = false;
+		fireMissilePod1.GetComponent<Bullet> ().enabled = false;
+		fireMissilePod2.GetComponent<Bullet2> ().enabled = false;
 
 		// アイテムを破壊する（メモリ上から消す）
 		Destroy (this.gameObject);
