@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Restart : MonoBehaviour {
 
-		// ★（追加）
-		// 先頭に「public」をつけること（ポイント）
-		public void OnRestartButtonClicked(){
-			SceneManager.LoadScene ("Main");
+	public void RestartButton(){
+	string sceneName = SceneManager.GetActiveScene ().name;
+			SceneManager.LoadScene (sceneName);
 		}
 	}
