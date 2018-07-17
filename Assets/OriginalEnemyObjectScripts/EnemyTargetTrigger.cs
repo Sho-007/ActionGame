@@ -26,7 +26,7 @@ public class EnemyTargetTrigger : MonoBehaviour {
 		if (gameObject.tag == "Player") {
 			//
 			gameObject.tag == "Player"
-		}
+		
 	}
 
 
