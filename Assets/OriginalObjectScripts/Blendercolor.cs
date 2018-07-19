@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering;
+using System.Collections;
 
 [ExecuteInEditMode]
 public class Blendercolor : RenderPipelineAsset
