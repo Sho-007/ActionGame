@@ -10,7 +10,7 @@ public class EnemyTargetTrigger : MonoBehaviour {
 	void Start(){
 		enemyController = GetComponent <CharacterController> ();
 		animator = GetComponent <Animator> ();
-		setPosition = GetComponent <SetPosition> ();
+		SetPositionEnemy = GetComponent <SetPositionEnemy> ();
 		setPosition.CreateRandomPosition ();
 		velocity = Vector3.zero;
 		arrived = false;
@@ -25,8 +25,8 @@ public class EnemyTargetTrigger : MonoBehaviour {
 		//プレイヤーの発見
 		if (gameObject.tag == "Player") {
 			//
-			gameObject.tag == "Player"
-		
+			gameObject.tag == "Player";
+		}
 	}
 
 
