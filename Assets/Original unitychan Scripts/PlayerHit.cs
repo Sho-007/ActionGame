@@ -20,11 +20,11 @@ public class PlayerHit : MonoBehaviour {
     }
  
     protected virtual void OnTriggerEnter(Collider c){
-       // if (TagUtility.getParentTagName(character.getGameObject().tag) == "Player") {
-          //  if (TagUtility.getParentTagName(c.gameObject) == "Enemy") {
-          //      c.GetComponent<Enemy>().damage(power);
-              //  Instantiate(damageEffect, transform.position, Quaternion.identity);
-        //    }
-        //}
+        //if (TagUtility.getParentTagName(character.getGameObject().tag) == "Player") {
+           // if (TagUtility.getParentTagName(c.gameObject) == "Enemy") {
+              // c.GetComponent<Enemy>().damage(power);
+               // Instantiate(damageEffect, transform.position, Quaternion.identity);
+           // }
+        }
     }
-}
+//}
