@@ -19,22 +19,22 @@ public class RetryItem : MonoBehaviour {
 
 	void Retry(){
 		this.gameObject.SetActive (true);
-		playerHP = 5;
-		playerHPSlider.value = playerHP;
+		PlayerHP = 5;
+		PlayerHPSlider.value = PlayerHP;
 	}
 
 	public void AddHP(int amount){
-		playerHP += amount;
-		if (playerHP > 5)
-			playerHP = 5;
-		playerHPSlider.value = playerHP;
+		PlayerHP += amount;
+		if (PlayerHP > 5)
+			PlayerHP = 5;
+		PlayerHPSlider.value = playerHP;
 	}
 
 	// 追加（自機1UPアイテム）
 	public void Player1Up(int amount){
 
 		// amount分だけ自機の残機を回復させる。
-		destroyCount -= amount;
+		DestroyCount -= amount;
 
 		// 最大残機数を超えないようにする（破壊された回数が０未満にならないようにする）
 		if (destroyCount < 0)
