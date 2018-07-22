@@ -17,21 +17,24 @@ public class SetPositionEnemy : MonoBehaviour {
 	void Start () {
 		//スタートポジションの設定
 		startPosition = transform.position;
-		SetDestination(strartPosition.transform);
+		SetDestination(transform.position);
 	}
 
-
+	//ランダムな位置の作成
 	public void CreateRandomPosition(){
 		//ランダムなVector2の値を得る
-		var randDestinations = Random.insiideUnitCircle*8;
-		//現在にランダムな位置を足して目的地とする
-
-		SetDesttination(startPosition + new Vector3(Random))
-
+		var randDestination = Random.insideUnitCircle*8;
+		//現在地にランダムな位置を足して目的地とする
+		SetDestination(startPosition+new Vector3(randDestination.x,0,randDestination.y));
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	//目的地を設定する
+	public void SetDestination(Vector3 position){
+		destination = position;
+	}
+
+	//目的地を取得する
+	public Vector3 GetDestination(){
+		return destination;
 	}
 }
