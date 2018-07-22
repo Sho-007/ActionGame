@@ -18,10 +18,10 @@ public class DamageReturnArea : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider c) {
-		string tag = TagUtility.getParentTagName(c.gameObject);
+		//string tag = TagUtility.getParentTagName(c.gameObject);
 
 		if (tag == "Player") {
-			c.GetComponent<Player>().forceDownDamage(this);
+		//	c.GetComponent<Player>().forceDownDamage(this);
 			StartCoroutine("returnCharacter", c.gameObject);
 
 			// カメラアングルを固定
