@@ -1,10 +1,16 @@
 fileFormatVersion: 2
 guid: 873f12d87be8630438b877f50e96d434
-timeCreated: 18446744011573954816
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 23
   fileIDToRecycleName:
+    100000: CannonLow
+    100002: //RootNode
+    400000: CannonLow
+    400002: //RootNode
+    2300000: CannonLow
+    3300000: CannonLow
     4300000: CannonLow
+    11100000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -24,6 +30,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -55,6 +62,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
