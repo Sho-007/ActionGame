@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public class EnemyTargetTrigger : MonoBehaviour {
+	
 
 
 	GameObject tagObjects;
@@ -43,6 +44,7 @@ public class EnemyTargetTrigger : MonoBehaviour {
 		}
 		}
 	}
+
 
 
 	//　敵キャラクターの状態変更メソッド
