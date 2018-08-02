@@ -7,8 +7,7 @@ using System;
 public class Bullet2 : MonoBehaviour {
 
 	//弾のプレハブ　クローン
-	public GameObject bullet2;
-	GameObject  bulletClone;
+	public GameObject TrackingBullet;
 
 	//武器の先端
 	public Transform tip;
