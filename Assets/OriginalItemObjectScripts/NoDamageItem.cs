@@ -35,6 +35,6 @@ IEnumerator NodamageItem(){
 			print(Time.time);
 	Destroy (Destroyeffect);
 	Destroy (get_audio);
-	yield return new WaitForSeconds (1f);
+	yield return new WaitForSeconds (0.5f);
 }
 }
