@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Wind : MonoBehaviour {
+public class JumpPanel : MonoBehaviour {
 
 	public float Player_Jump;
 	public bool Jump;
