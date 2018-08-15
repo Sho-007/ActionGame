@@ -7,10 +7,10 @@ public class StageGenerator : MonoBehaviour {
 
     int currentTipIndex;
     //ターゲットキャラクターの指定
-    public Transform charactor;
+    public Transform character;
     //ステージチッププレハブ配列
     public GameObject[] stageTips;
-    //自動生成開始インデックス
+    
     public int startTipIndex;
     //生成先読み個数
     public int preInstantiate;
@@ -22,14 +22,13 @@ public class StageGenerator : MonoBehaviour {
 	void Start () {
 		currentTipsIndex = startTipIndex - 1;
         UpdateStage(preInstantiate);
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 //キャラクターの一から現在のステージチップのインデックスを計算
-        int charaPositionIndex = (int)(charactor.position.z/StageTipSize);
+        int charaPositionIndex = (int)(character.position.z / StageTipSize);
 
         //キャラクターが次のステージチップに入ったらステージ更新処理を行う
         if(chraPositionIndex + preInstantiate > currentTipIndex)
@@ -49,7 +48,7 @@ void UpdateStage(int toTipIndex){
         GameObject stageObject = GenarateStage(i);
 
         //生成したステージチップを管理リストに追加し
-        generateStageList.Add(stageObject);
+        generatedStageList.Add(stageObject);
     }
 
     //ステージ保持上限内になるまで古いステージの削除
@@ -62,7 +61,7 @@ void UpdateStage(int toTipIndex){
 GameObject GenerateStage (int tipIndex){
     int nextStageTip = Random.Range(0,stageTips.Length);
 
-    GameObject stageObject = (GameObject)Instanteate(stageTips[nextStageTip],new Vector3(0, 0, tipIndex * StageTipSize),Quaternion.identity);
+    GameObject stageObject = (GameObject)Instantiate(stageTips[nextStageTip],new Vector3(0, 0, tipIndex * StageTipSize),Quaternion.identity);
 
     return stageObject;
 }
