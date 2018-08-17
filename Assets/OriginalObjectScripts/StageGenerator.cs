@@ -20,7 +20,7 @@ public class StageGenerator : MonoBehaviour {
     //初期化処理
 	// Use this for initialization
 	void Start () {
-		currentTipsIndex = startTipIndex - 1;
+		currentTipIndex = startTipIndex - 1;
         UpdateStage(preInstantiate);
 	}
 	
@@ -31,7 +31,7 @@ public class StageGenerator : MonoBehaviour {
         int charaPositionIndex = (int)(character.position.z / StageTipSize);
 
         //キャラクターが次のステージチップに入ったらステージ更新処理を行う
-        if(chraPositionIndex + preInstantiate > currentTipIndex)
+        if(charaPositionIndex + preInstantiate > currentTipIndex)
         {
             UpdateStage(charaPositionIndex + preInstantiate);
         }
@@ -45,7 +45,7 @@ void UpdateStage(int toTipIndex){
     //指定のステージチップまでを作成
     for (int i = currentTipIndex + 1; i <= toTipIndex; i++ )
     {
-        GameObject stageObject = GenarateStage(i);
+        GameObject stageObject = GenerateStage(i);
 
         //生成したステージチップを管理リストに追加し
         generatedStageList.Add(stageObject);
