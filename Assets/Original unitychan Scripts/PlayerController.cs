@@ -2,15 +2,25 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+	const int MinLine = -2;
+	const int MaxLine = 2;
+	const float LaneWidth = 1.0f;
+
+
 
 	CharacterController controller;
 	Animator animator;
 
 	Vector3 moveDirection = Vector3.zero;
+	int targetLane;
 
 	public float gravity;
 	public float speedZ;
+	//横方向のスピードのパラメータ
+	public float speedX;
 	public float speedJump;
+	//前進加速度のパラメータ
+	public float accelerationZ;
 
 	// Use this for initialization
 	void Start () {
