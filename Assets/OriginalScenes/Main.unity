@@ -12367,7 +12367,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 400096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
       propertyPath: m_LocalPosition.z
@@ -12400,7 +12400,7 @@ Prefab:
     - target: {fileID: 9500000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 212b3a957fa7bee41a0bf8c3b14ce293, type: 2}
+      objectReference: {fileID: 9100000, guid: e2cf68ff4b1ffda45a77f7307dd789b9, type: 2}
     - target: {fileID: 400222, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.02437098
@@ -12536,6 +12536,22 @@ Prefab:
     - target: {fileID: 100096, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.55629915
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.4147162
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.117963254
+      objectReference: {fileID: 0}
+    - target: {fileID: 400050, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7103707
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 412b92d4feeb9c548bfa98f62c4d1022, type: 2}
@@ -12803,6 +12819,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65fbf68fef7d4eb68264482b25b97ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  stageTips: []
+  startTipIndex: 0
+  preInstantiate: 0
+  generatedStageList: []
 --- !u!1001 &1406458115
 Prefab:
   m_ObjectHideFlags: 0
@@ -13413,6 +13434,7 @@ GameObject:
   - component: {fileID: 1716422095}
   - component: {fileID: 1716422094}
   - component: {fileID: 1716422098}
+  - component: {fileID: 1716422099}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -13495,6 +13517,19 @@ Skybox:
   m_GameObject: {fileID: 1716422093}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 0}
+--- !u!114 &1716422099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1716422093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352c9a274f3444b998ce82821bb1b649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1225603645}
+  followSpeed: 5
 --- !u!1001 &1756033434
 Prefab:
   m_ObjectHideFlags: 0
