@@ -2,8 +2,8 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	const int MinLine = -2;
-	const int MaxLine = 2;
+	const int MinLane = -2;
+	const int MaxLane = 2;
 	const float LaneWidth = 1.0f;
 
 
@@ -34,38 +34,19 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		//デバック用
 		//デバック用のキー入力
-		if(Input.GetkeyDown("left"))MoveToLeft();
-		if(Input.GetkeyDown("right"))MoveToRight();
-		if(Input.GetkeyDown("space"))Jump();
+		if (Input.GetKeyDown("left")) MoveToLeft();
+		if (Input.GetKeyDown("right")) MoveToRight();
+		if (Input.GetKeyDown("space")) Jump();
 
 		//徐々に加速してZ方向に常に前進させる
 		//前進ベロシティの計算
-		floata acceleratedZ = moveDirection.z + (accelerationZ * Time.deltaTime);
-		moveDirection.z = Mathf.Clamp(acceleratedZ,0,speedZ);
+		float acceleratedZ = moveDirection.z + (accelerationZ * Time.deltaTime);
+		moveDirection.z = Mathf.Clamp(acceleratedZ, 0, speedZ);
 
 		//X方向は目標のポジションまでの差分の割合で速度を計算
 		//横移動のベロシティの計算
-		float ratiX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
+		float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
 		moveDirection.x = ratioX * speedX;
-
-		//地上にいる間のみ操作を行う
-		if(controller.isGrounded){
-			//Inputを検知して前を進める
-			if(Input.GetAxis("Vetrical") > 0.0f){
-				moveDirection.z = Input.GetAxis("Vertical") * speedZ;
-			}else{
-				moveDirection.z = 0;
-			}
-
-			//方向転換
-			transform.Rotate(0,Input.GetAxis("Horizontal") * 3,0);
-
-			//ジャンプ
-			if(Input.GetButton("Jump")){
-				moveDirection.y = speedJump;
-				animator.SetTrigger("jump");
-			}
-		}
 
 		//重力分の力をフレームに入れる
 		moveDirection.y -= gravity * Time.deltaTime;
@@ -83,21 +64,21 @@ public class PlayerController : MonoBehaviour {
 	//左のレーンに移動を開始
 	public void MoveToLeft(){
 		//目標レーンの変更
-		if(controller.isGrounded && targetLane < MinLane) targetLane--;
+		if (controller.isGrounded && targetLane < MinLane) targetLane--;
 	}
 	//右のレーンに移動を開始
 	public void MoveToRight(){
 		//目標レーンの変更
-		if(controller.isGrounded && targetLane < MaxLane) targetLane++;
+		if (controller.isGrounded && targetLane < MaxLane) targetLane++;
 	}
 
 	public void Jump(){
-		if(controller.isGrounded){
+		if (controller.isGrounded){
 			//ジャンプ関数
 			moveDirection.y = speedJump;
 
 			//ジャンプトリガーを設定
-			animator.SetTrigger("Jump");
+			animator.SetTrigger("jump");
 		}
 	}
 }
