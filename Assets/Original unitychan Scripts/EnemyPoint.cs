@@ -21,9 +21,10 @@ public class EnemyPoint : MonoBehaviour {
 
 		//球を表示
 		Gizmos.color = new Color(1, 0, 0, 0.5f);
+		Gizmos.DrawSphere(transform.position + offset, 0.5f);
 
 		//プレファブ名のアイコンを表示
 		if(prefab != null)
-		Gizmo.DrawIcon(transform.position + offset, prefab.name, true);
+		Gizmos.DrawIcon(transform.position + offset, prefab.name, true);
 	}
 }

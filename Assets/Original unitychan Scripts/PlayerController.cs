@@ -5,7 +5,8 @@ public class PlayerController : MonoBehaviour {
 	const int MinLane = -2;
 	const int MaxLane = 2;
 	const float LaneWidth = 1.0f;
-
+	const int DefaultLife = 3;
+	const float StunDuration = 0.5f;
 
 
 	CharacterController controller;
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour {
 
 	Vector3 moveDirection = Vector3.zero;
 	int targetLane;
+	int life = DefaultLife;
+	float recoverTime = 0.0f;
 
 	public float gravity;
 	public float speedZ;
@@ -21,6 +24,15 @@ public class PlayerController : MonoBehaviour {
 	public float speedJump;
 	//前進加速度のパラメータ
 	public float accelerationZ;
+
+	//ライフ取得用関数
+	public int Life(){
+		return life;
+	}
+	//気絶判定
+	public bool IsStan(){
+		return recoverTime > 0.0f || life <= 0;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +50,15 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown("right")) MoveToRight();
 		if (Input.GetKeyDown("space")) Jump();
 
+		//気絶時の行動
+		if(IsStan()){
+			//動きを止め気絶状態からの復帰カウントを進める
+			moveDirection.x = 0.0f;
+			moveDirection.z = 0.0f;
+			recoverTime -= Time.deltaTime;
+		}
+		else{
+
 		//徐々に加速してZ方向に常に前進させる
 		//前進ベロシティの計算
 		float acceleratedZ = moveDirection.z + (accelerationZ * Time.deltaTime);
@@ -47,8 +68,9 @@ public class PlayerController : MonoBehaviour {
 		//横移動のベロシティの計算
 		float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
 		moveDirection.x = ratioX * speedX;
+		}
 
-		//重力分の力をフレームに入れる
+		//重力分の力を毎フレームに追加
 		moveDirection.y -= gravity * Time.deltaTime;
 
 		//移動実行
@@ -63,22 +85,47 @@ public class PlayerController : MonoBehaviour {
 	}
 	//左のレーンに移動を開始
 	public void MoveToLeft(){
+		//気絶時の入力キャンセル
+		if(IsStan()) return;
 		//目標レーンの変更
 		if (controller.isGrounded && targetLane < MinLane) targetLane--;
 	}
 	//右のレーンに移動を開始
 	public void MoveToRight(){
+		//気絶時の入力キャンセル
+		if(IsStan()) return;
 		//目標レーンの変更
 		if (controller.isGrounded && targetLane < MaxLane) targetLane++;
 	}
 
 	public void Jump(){
+		//気絶時のキャンセル入力
+		if (IsStan())return;
 		if (controller.isGrounded){
 			//ジャンプ関数
 			moveDirection.y = speedJump;
 
 			//ジャンプトリガーを設定
 			animator.SetTrigger("jump");
+		}
+	}
+
+	//CharacterControllerのコリジョン関数
+	//CharacterControllerにコリジョンが生じた時の処理
+	void OnControllerColliderHit (ControllerColliderHit hit){
+		if(IsStan()) return;
+
+		//ヒット処理
+		if(hit.gameObject.tag == "Robo"){
+			//ライフを減らして気絶状態に移行
+			life--;
+			recoverTime = StunDuration;
+
+			//ダメージトリガーを設定
+			animator.SetTrigger("damage");
+
+			//ヒットしたオブジェクトは削除
+			Destroy(hit.gameObject);
 		}
 	}
 }
