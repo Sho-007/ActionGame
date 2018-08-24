@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 	int life = DefaultLife;
 	float recoverTime = 0.0f;
 
+
 	public float gravity;
 	public float speedZ;
 	//横方向のスピードのパラメータ
