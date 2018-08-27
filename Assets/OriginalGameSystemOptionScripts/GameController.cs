@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour {
 		lifePanel.UpdateLife(player.Life());
 
 		//unitychanのライフが0になった場合はゲームオーバー
-		if (nejiko.Life() <= 0){
+		if (player.Life() <= 0){
 			//これ以降のUpdateは止める
 			enabled = false;
 

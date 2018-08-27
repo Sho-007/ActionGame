@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
 
 public class TitleController : MonoBehaviour {
 
@@ -8,7 +8,7 @@ public class TitleController : MonoBehaviour {
 
 	public void Start(){
 		//ハイスコアを表示
-		highScoreLabel.text = "High Score : " + PlayerPrfs.GetInt("HighScore") + "m"
+		highScoreLabel.text = "High Score : " + PlayerPrefs.GetInt("HighScore") + "m";
 	}
 
 	public void OnStartButtonClicked(){
