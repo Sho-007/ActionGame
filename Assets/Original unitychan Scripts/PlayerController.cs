@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour {
 		if(IsStan()) return;
 
 		//ヒット処理
-		if(hit.gameObject.tag == "Robo"){
+		if(hit.gameObject.tag == "Enemy"){
 			//ライフを減らして気絶状態に移行
 			life--;
 			recoverTime = StunDuration;
