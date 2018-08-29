@@ -47,8 +47,8 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		//デバック用
 		//デバック用のキー入力
-		if (Input.GetKeyDown("left")) MoveToLeft();
-		if (Input.GetKeyDown("right")) MoveToRight();
+		if (Input.GetKeyDown("leftaroow")) MoveToLeft();
+		if (Input.GetKeyDown("rightarrow")) MoveToRight();
 		if (Input.GetKeyDown("space")) Jump();
 
 		//気絶時の行動
