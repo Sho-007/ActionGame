@@ -47,9 +47,9 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		//デバック用
 		//デバック用のキー入力
-		if (Input.GetKeyDown("leftaroow")) MoveToLeft();
-		if (Input.GetKeyDown("rightarrow")) MoveToRight();
-		if (Input.GetKeyDown("space")) Jump();
+		if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveToLeft();
+		if (Input.GetKeyDown(KeyCode.RightArrow)) MoveToRight();
+		if (Input.GetKeyDown(KeyCode.Space)) Jump();
 
 		//気絶時の行動
 		if(IsStan()){
@@ -58,7 +58,8 @@ public class PlayerController : MonoBehaviour {
 			moveDirection.z = 0.0f;
 			recoverTime -= Time.deltaTime;
 		}
-		else{
+		else
+		{
 
 		//徐々に加速してZ方向に常に前進させる
 		//前進ベロシティの計算
