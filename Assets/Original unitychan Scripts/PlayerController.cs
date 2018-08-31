@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveToLeft();
 		if (Input.GetKeyDown(KeyCode.RightArrow)) MoveToRight();
 		if (Input.GetKeyDown(KeyCode.Space)) Jump();
+		if (Input.GetKeyDown(KeyCode.F)) Pause();
 
 		//気絶時の行動
 		if(IsStan()){
@@ -110,6 +111,10 @@ public class PlayerController : MonoBehaviour {
 			//ジャンプトリガーを設定
 			animator.SetTrigger("jump");
 		}
+	}
+
+	public void Pause(){
+		if(Input)
 	}
 
 	//CharacterControllerのコリジョン関数
