@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour {
 	int life = DefaultLife;
 	float recoverTime = 0.0f;
 
-
 	public float gravity;
 	public float speedZ;
 	//横方向のスピードのパラメータ
@@ -40,7 +39,6 @@ public class PlayerController : MonoBehaviour {
 		//必要なコンポーネントを自動で取得
 		controller = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
-
 	}
 	
 	// Update is called once per frame
@@ -50,7 +48,6 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveToLeft();
 		if (Input.GetKeyDown(KeyCode.RightArrow)) MoveToRight();
 		if (Input.GetKeyDown(KeyCode.Space)) Jump();
-		if (Input.GetKeyDown(KeyCode.F)) Pause();
 
 		//気絶時の行動
 		if(IsStan()){
@@ -86,6 +83,9 @@ public class PlayerController : MonoBehaviour {
 		//速度が0以上なら走っているフラグをtrueにする
 		animator.SetBool("run", moveDirection.z > 0.0f);
 	}
+	
+
+
 	//左のレーンに移動を開始
 	public void MoveToLeft(){
 		//気絶時の入力キャンセル
@@ -112,10 +112,8 @@ public class PlayerController : MonoBehaviour {
 			animator.SetTrigger("jump");
 		}
 	}
+	
 
-	public void Pause(){
-		if(Input)
-	}
 
 	//CharacterControllerのコリジョン関数
 	//CharacterControllerにコリジョンが生じた時の処理
