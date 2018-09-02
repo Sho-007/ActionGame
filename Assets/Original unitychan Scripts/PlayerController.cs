@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
 	CharacterController controller;
 	Animator animator;
+	Rigidbody rigidbody;
 
 	Vector3 moveDirection = Vector3.zero;
 	int targetLane;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour {
 		//必要なコンポーネントを自動で取得
 		controller = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
+		rigidbody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
