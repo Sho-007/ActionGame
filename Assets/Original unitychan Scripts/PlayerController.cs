@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	const float LaneWidth = 1.0f;
 	const int DefaultLife = 3;
 	const float StunDuration = 0.5f;
+	
 
 
 	CharacterController controller;
@@ -83,7 +84,7 @@ public class PlayerController : MonoBehaviour {
 		if(controller.isGrounded) moveDirection.y = 0;
 
 		//速度が0以上なら走っているフラグをtrueにする
-		animator.SetBool("run", moveDirection.z > 0.0f);
+		animator.SetBool("is_running", moveDirection.z > 0.0f);
 	}
 	
 
@@ -93,7 +94,7 @@ public class PlayerController : MonoBehaviour {
 		//気絶時の入力キャンセル
 		if(IsStan()) return;
 		//目標レーンの変更
-		if (controller.isGrounded && targetLane < MinLane) targetLane--;
+		if (controller.isGrounded && targetLane >  MinLane) targetLane--;
 	}
 	//右のレーンに移動を開始
 	public void MoveToRight(){
