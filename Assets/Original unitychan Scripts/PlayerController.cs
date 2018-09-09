@@ -48,9 +48,9 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		//デバック用
 		//デバック用のキー入力
-		if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveToLeft();
-		if (Input.GetKeyDown(KeyCode.RightArrow)) MoveToRight();
-		if (Input.GetKeyDown(KeyCode.Space)) Jump();
+		if (Input.GetKeyDown("left")) MoveToLeft();
+		if (Input.GetKeyDown("right")) MoveToRight();
+		if (Input.GetKeyDown("space")) Jump();
 
 		//気絶時の行動
 		if(IsStan()){
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour {
 		if(controller.isGrounded) moveDirection.y = 0;
 
 		//速度が0以上なら走っているフラグをtrueにする
-		animator.SetBool("is_running", moveDirection.z > 0.0f);
+		animator.SetBool("run", moveDirection.z > 0.0f);
 	}
 	
 
