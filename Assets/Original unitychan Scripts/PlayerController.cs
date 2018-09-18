@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour {
 		//横移動のベロシティの計算
 		float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
 		moveDirection.x = ratioX * speedX;
+		Debug.Log("Stan");
 		}
 
 		//重力分の力を毎フレームに追加
@@ -92,9 +93,10 @@ public class PlayerController : MonoBehaviour {
 	//左のレーンに移動を開始
 	public void MoveToLeft(){
 		//気絶時の入力キャンセル
-		if(IsStan()) return;
+		if(!IsStan()) return;
 		//目標レーンの変更
 		if (controller.isGrounded && targetLane >  MinLane) targetLane--;
+		if(Input.GetKeyDown("left")) Debug.Log("hoge");
 	}
 	//右のレーンに移動を開始
 	public void MoveToRight(){
@@ -102,6 +104,7 @@ public class PlayerController : MonoBehaviour {
 		if(IsStan()) return;
 		//目標レーンの変更
 		if (controller.isGrounded && targetLane < MaxLane) targetLane++;
+		Debug.Log("Right");
 	}
 
 	public void Jump(){
@@ -112,7 +115,8 @@ public class PlayerController : MonoBehaviour {
 			moveDirection.y = speedJump;
 
 			//ジャンプトリガーを設定
-			animator.SetTrigger("jump");
+			animator.SetTrigger("Jump");
+			Debug.Log("jump");
 		}
 	}
 	
