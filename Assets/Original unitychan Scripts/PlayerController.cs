@@ -2,6 +2,7 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+	
 	const int MinLane = -2;
 	const int MaxLane = 2;
 	const float LaneWidth = 1.0f;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 	//気絶判定
 	public bool IsStan(){
 		return recoverTime > 0.0f || life <= 0;
+		
 	}
 
 	// Use this for initialization
@@ -92,14 +94,16 @@ public class PlayerController : MonoBehaviour {
 
 	//左のレーンに移動を開始
 	public void MoveToLeft(){
+		print("hoge");
 		//気絶時の入力キャンセル
-		if(!IsStan()) return;
+		if(IsStan()) return;
 		//目標レーンの変更
-		if (controller.isGrounded && targetLane >  MinLane) targetLane--;
+		if(controller.isGrounded && targetLane >  MinLane) targetLane--;
 		if(Input.GetKeyDown("left")) Debug.Log("hoge");
 	}
 	//右のレーンに移動を開始
 	public void MoveToRight(){
+		print("hoge");
 		//気絶時の入力キャンセル
 		if(IsStan()) return;
 		//目標レーンの変更
@@ -108,6 +112,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void Jump(){
+		print("hoge");
 		//気絶時のキャンセル入力
 		if (IsStan())return;
 		if (controller.isGrounded){
