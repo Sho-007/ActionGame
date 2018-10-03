@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 
 	CharacterController controller;
 	Animator animator;
-	Rigidbody rigidbody;
+
 
 	Vector3 moveDirection = Vector3.zero;
 	int targetLane;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 	}
 	//気絶判定
 	public bool IsStan(){
-		return recoverTime > 0.0f || life <= 0;
+		return recoverTime > 0.0f||life <= 0;
 		
 	}
 
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour {
 		//必要なコンポーネントを自動で取得
 		controller = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
-		rigidbody = GetComponent<Rigidbody>();
+		
 	}
 	
 	// Update is called once per frame
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour {
 		//横移動のベロシティの計算
 		float ratioX = (targetLane * LaneWidth - transform.position.x) / LaneWidth;
 		moveDirection.x = ratioX * speedX;
-		Debug.Log("Stan");
+
 		}
 
 		//重力分の力を毎フレームに追加
