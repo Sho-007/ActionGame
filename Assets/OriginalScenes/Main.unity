@@ -6170,27 +6170,27 @@ Prefab:
     - target: {fileID: 143204495551311126, guid: ea4c1716c324d4920a07246570f529a7,
         type: 2}
       propertyPath: m_Height
-      value: 1
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 143204495551311126, guid: ea4c1716c324d4920a07246570f529a7,
         type: 2}
       propertyPath: m_Radius
-      value: 0.9
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 143204495551311126, guid: ea4c1716c324d4920a07246570f529a7,
         type: 2}
       propertyPath: m_Center.y
-      value: 1.05
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 143204495551311126, guid: ea4c1716c324d4920a07246570f529a7,
         type: 2}
       propertyPath: m_MinMoveDistance
-      value: 0
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 143204495551311126, guid: ea4c1716c324d4920a07246570f529a7,
         type: 2}
       propertyPath: m_SkinWidth
-      value: 0.09
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 1100467463323598, guid: ea4c1716c324d4920a07246570f529a7, type: 2}
       propertyPath: m_Name
