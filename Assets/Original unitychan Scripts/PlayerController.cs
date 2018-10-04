@@ -85,9 +85,11 @@ public class PlayerController : MonoBehaviour {
 
 		//移動設置してたらY方向に速度をリセットする
 		if(controller.isGrounded) moveDirection.y = 0;
+		
 
 		//速度が0以上なら走っているフラグをtrueにする
 		animator.SetBool("run", moveDirection.z > 0.0f);
+		
 	}
 	
 
@@ -99,7 +101,8 @@ public class PlayerController : MonoBehaviour {
 		if(IsStan()) return;
 		//目標レーンの変更
 		if(controller.isGrounded && targetLane >  MinLane) targetLane--;
-		if(Input.GetKeyDown("left")) Debug.Log("hoge");
+		Debug.Log("hoge");
+		
 	}
 	//右のレーンに移動を開始
 	public void MoveToRight(){
@@ -118,10 +121,12 @@ public class PlayerController : MonoBehaviour {
 		if (controller.isGrounded){
 			//ジャンプ関数
 			moveDirection.y = speedJump;
+			
 
 			//ジャンプトリガーを設定
 			animator.SetTrigger("Jump");
 			Debug.Log("jump");
+			
 		}
 	}
 	
