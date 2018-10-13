@@ -11,10 +11,12 @@ public class NormalFollow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//追従距離の計算
 		diff = target.transform.position - transform.position;
 	}
 	
 	// Update is called once per frame
+	
 	void LateUpdate () {
 		transform.position = Vector3.Lerp(transform.position,target.transform.position - diff,Time.deltaTime * followSpeed);
 	}

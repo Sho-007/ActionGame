@@ -14,7 +14,7 @@ public class Bullet3 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//名前でオブジェクト特定b
-		target = GameObject.Find("unitychan");
+		target = GameObject.Find("player");
 		StartCoroutine("Spawn");
 	}
 
