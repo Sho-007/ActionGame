@@ -2,13 +2,11 @@
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	
 	const int MinLane = -2;
 	const int MaxLane = 2;
 	const float LaneWidth = 1.0f;
 	const int DefaultLife = 3;
 	const float StunDuration = 0.5f;
-	
 
 
 	CharacterController controller;
@@ -22,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float gravity;
 	public float speedZ;
-	//横方向のスピードのパラメータ
+	//横方向のパラメータ
 	public float speedX;
 	public float speedJump;
 	//前進加速度のパラメータ
@@ -35,7 +33,6 @@ public class PlayerController : MonoBehaviour {
 	//気絶判定
 	public bool IsStan(){
 		return recoverTime > 0.0f||life <= 0;
-		
 	}
 
 	// Use this for initialization
@@ -43,9 +40,7 @@ public class PlayerController : MonoBehaviour {
 		//必要なコンポーネントを自動で取得
 		controller = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
-		
 	}
-	
 	// Update is called once per frame
 	void Update () {
 		//デバック用
@@ -85,13 +80,10 @@ public class PlayerController : MonoBehaviour {
 
 		//移動設置してたらY方向に速度をリセットする
 		if(controller.isGrounded) moveDirection.y = 0;
-		
 
 		//速度が0以上なら走っているフラグをtrueにする
 		animator.SetBool("run", moveDirection.z > 0.0f);
-		
 	}
-	
 
 
 	//左のレーンに移動を開始
@@ -102,7 +94,6 @@ public class PlayerController : MonoBehaviour {
 		//目標レーンの変更
 		if(controller.isGrounded && targetLane >  MinLane) targetLane--;
 		Debug.Log("hoge");
-		
 	}
 	//右のレーンに移動を開始
 	public void MoveToRight(){
@@ -121,15 +112,12 @@ public class PlayerController : MonoBehaviour {
 		if (controller.isGrounded){
 			//ジャンプ関数
 			moveDirection.y = speedJump;
-			
 
 			//ジャンプトリガーを設定
 			animator.SetTrigger("Jump");
 			Debug.Log("jump");
-			
 		}
 	}
-	
 
 
 	//CharacterControllerのコリジョン関数
@@ -143,7 +131,7 @@ public class PlayerController : MonoBehaviour {
 			life--;
 			recoverTime = StunDuration;
 
-			//ダメージトリガーを設定
+			//ダメージをトリガーに設定
 			animator.SetTrigger("damage");
 
 			//ヒットしたオブジェクトは削除
