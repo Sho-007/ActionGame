@@ -14,7 +14,7 @@ public class StageGenerator : MonoBehaviour {
     public int startTipIndex;
     //生成先読み個数
     public int preInstantiate;
-    //ステージチップ保持個数リスト
+    //生成済みのステージチップ保持個数リスト
     public List<GameObject> generatedStageList = new List<GameObject>();
 
     //初期化処理
