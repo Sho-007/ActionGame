@@ -11,13 +11,11 @@ public class EnemyPoint : MonoBehaviour {
 		GameObject go = (GameObject)Instantiate(prefab, Vector3.zero, Quaternion.identity);
 		//一緒に削除されるように生成した敵オブジェクトを子に設定
 		go.transform.SetParent(transform, false);
-		
 	}
-	
 	//ステージエディット中のためにシーンにギズモを表示
 	void OnDrawGizmos () {
 		//ギズモの底辺が地面と同じ高さになるようにオフセットを設定
-		Vector3 offset = new Vector3(0, 0.5f ,0);
+		Vector3 offset = new Vector3(0, 0.5f, 0);
 
 		//球を表示
 		Gizmos.color = new Color(1, 0, 0, 0.5f);
