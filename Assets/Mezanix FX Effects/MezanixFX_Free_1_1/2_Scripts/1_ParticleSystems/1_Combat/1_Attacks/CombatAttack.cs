@@ -19,7 +19,7 @@ public class CombatAttack : MonoBehaviour
 	public float lifeTime = 10f;
 
 
-	ParticleSystem ps = null;
+	ParticleSystem main = null;
 
 
 	[Header("Hit:")]
@@ -65,7 +65,7 @@ public class CombatAttack : MonoBehaviour
 
 	void Awake ()
 	{
-		ps = GetComponent<ParticleSystem>();
+		main = GetComponent<ParticleSystem>();
 	}
 
 	// Use this for initialization
@@ -350,10 +350,10 @@ public class CombatAttack : MonoBehaviour
 
 	void AdaptLifeTimeAndDurationAccordingToVelocityZ ()
 	{
-		if(ps == null)
+		if(main == null)
 			return;
 
-		if(ps.simulationSpace == ParticleSystemSimulationSpace.Local)
+		if(main.simulationSpace == ParticleSystemSimulationSpace.Local)
 			return;
 		
 
@@ -363,6 +363,6 @@ public class CombatAttack : MonoBehaviour
 
 		float vzNotZero = vzPositive <= 0.1f? 0.1f: vzPositive;
 
-		ps.startLifetime = factor / vzNotZero;
+		main.startLifetime = factor / vzNotZero;
 	}
 }
