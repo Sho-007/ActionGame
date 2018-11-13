@@ -1,10 +1,13 @@
 ﻿<Properties StartupConfiguration="{76567C54-8916-BB05-911A-3CED85FDAE19}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Original unitychan Scripts/EnemyPoint.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Standard Assets/Utility/TimedObjectDestructor.cs">
     <Files>
       <File FileName="Assets/Original unitychan Scripts/PlayerController.cs" Line="18" Column="25" />
       <File FileName="Assets/OriginalObjectScripts/StageGenerator.cs" Line="1" Column="1" />
       <File FileName="Assets/Original unitychan Scripts/EnemyPoint.cs" Line="1" Column="1" />
+      <File FileName="Assets/Mezanix FX Effects/MezanixFX_Free_1_1/2_Scripts/1_ParticleSystems/1_Combat/1_Attacks/CombatAttack.cs" Line="71" Column="29" />
+      <File FileName="Assets/Standard Assets/Editor/CrossPlatformInput/CrossPlatformInputInitialize.cs" Line="95" Column="1" />
+      <File FileName="Assets/Standard Assets/Utility/TimedObjectDestructor.cs" Line="24" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
