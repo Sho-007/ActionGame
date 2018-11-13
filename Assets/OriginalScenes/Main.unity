@@ -467,6 +467,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4174953074879126, guid: d7d115c0154254d2c865c004f00654de, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174953074879126, guid: d7d115c0154254d2c865c004f00654de, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174953074879126, guid: d7d115c0154254d2c865c004f00654de, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7d115c0154254d2c865c004f00654de, type: 2}
   m_IsPrefabAsset: 0
@@ -717,6 +729,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4420800975763138, guid: 3beacd406c6174087b965b595d7338d8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3beacd406c6174087b965b595d7338d8, type: 2}
   m_IsPrefabAsset: 0
@@ -725,6 +741,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1334619679060584, guid: 3beacd406c6174087b965b595d7338d8,
     type: 2}
   m_PrefabInternal: {fileID: 1798894634}
+--- !u!1 &1798894636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1735994908345738, guid: 3beacd406c6174087b965b595d7338d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1798894634}
+--- !u!114 &1798894637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798894636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3054f4242c74e1f9e51ab7ebd7df34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1254417344176126, guid: 00722e8627bf44f918cf13f3606fe8f0, type: 2}
 --- !u!1001 &2084942869
 Prefab:
   m_ObjectHideFlags: 0
@@ -770,6 +803,18 @@ Prefab:
       value: 
       objectReference: {fileID: 1254417344176126, guid: 00722e8627bf44f918cf13f3606fe8f0,
         type: 2}
+    - target: {fileID: 4630761920552710, guid: 6df2e929402954660928cbda22db8654, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630761920552710, guid: 6df2e929402954660928cbda22db8654, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4630761920552710, guid: 6df2e929402954660928cbda22db8654, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6df2e929402954660928cbda22db8654, type: 2}
   m_IsPrefabAsset: 0
